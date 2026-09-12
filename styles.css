@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+#calcbody {
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    border-radius: 5%;
+    background-color: darkgray;
+}
+
+#calcbodytop {
+    margin: 10px;
+    border: 1px solid black;
+    height: 80px;
+    width: 380px;
+    background-color: rgb(206, 205, 205);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calcbodybottom {
+    margin: 10px;
+    border: 1px solid black;
+    height: 280px;
+    width: 380px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#screen {
+    border: 1px solid black;
+    height: 50px;
+    width: 95%;
+}
+
+#digits {
+    height: 270px;
+    width: 200px;
+    margin-top: 5px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+#operators {
+    height: 270px;
+    width: 140px;
+    margin-top: 5px;
+    margin-left: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#digit {
+    border: 1px solid black;
+    height: 50px;
+    width: 55px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(240, 180, 119);
+}
+
+#digit:nth-child(10) {
+    order: 10;
+}
+
+#digit:nth-child(11),
+#digit:nth-child(12) {
+    visibility: hidden;
+}
+
+#operators #digit:nth-child(2) {
+    visibility: hidden;
+}
+
+#digit span {
+    font-weight: bold;
+}
+
+#digit:hover {
+    filter: brightness(80%);
+}
