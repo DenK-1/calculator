@@ -12,13 +12,12 @@ let num1 = null, operator = null, num2 = null
 
 function preOperate(event) {
     if (num1 == null && operator == null && num2 == null) screen.innerText = ""
-
-    if (this.dataset.val == "C") {
+    if (this.hasAttribute("data-cancel")) {
         num1 = null, operator = null, num2 = null
         screen.innerText = 0
     }
     //num1
-    if ((Number(this.dataset.val) || this.dataset.val == "0") && operator == null) {
+    if (this.hasAttribute("data-digit") && operator == null) {
         console.log("num1")
         if (num1 != null) {
             num1 += this.dataset.val
@@ -29,7 +28,7 @@ function preOperate(event) {
         }
     }
     //num2
-    if ((Number(this.dataset.val) || this.dataset.val == "0") && num1 != null && operator != null) {
+    if (this.hasAttribute("data-digit") && num1 != null && operator != null) {
         console.log("num2")
         if (num2 != null) {
             num2 += this.dataset.val
@@ -41,13 +40,13 @@ function preOperate(event) {
 
     }
     //operator
-    if (!(Number(this.dataset.val) || this.dataset.val == "0") && num1 != null && num2 == null) {
+    if (!this.hasAttribute("data-digit") && num1 != null && num2 == null) {
         console.log("operator")
         operator = this.dataset.val
     }
     //operator+calculate
 
-    if (!(Number(this.dataset.val) || this.dataset.val == "0") && num1 != null && num2 != null && operator != null && operator != "=") {
+    if (!this.hasAttribute("data-digit") && num1 != null && num2 != null && operator != null && operator != "=") {
         console.log("operator+calc")
         equal(num1, operator, num2, event)
     }
