@@ -33,9 +33,12 @@
 }
 
 #screen {
-    border: 1px solid black;
+
     height: 50px;
     width: 95%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end
 }
 
 #digits {
@@ -91,4 +94,9 @@
 
 #digit:hover {
     filter: brightness(80%);
+}
+
+#screen span {
+    font-weight: bold;
+    font-size: 30px;
 }
