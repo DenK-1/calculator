@@ -4,17 +4,21 @@
 
 #calcbody {
     border: 1px solid black;
-    width: 400px;
-    height: 400px;
+    width: 360px;
+    height: 350px;
     border-radius: 5%;
     background-color: darkgray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 }
 
 #calcbodytop {
-    margin: 10px;
     border: 1px solid black;
-    height: 80px;
-    width: 380px;
+    height: 60px;
+    width: 340px;
     background-color: rgb(206, 205, 205);
     border-radius: 10px;
     display: flex;
@@ -23,17 +27,16 @@
 }
 
 #calcbodybottom {
-    margin: 10px;
     border: 1px solid black;
-    height: 280px;
-    width: 380px;
+    height: 260px;
+    width: 340px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #screen {
-
     height: 50px;
     width: 95%;
     display: flex;
@@ -42,29 +45,31 @@
 }
 
 #digits {
-    height: 270px;
-    width: 200px;
-    margin-top: 5px;
-    margin-left: 5px;
+    height: 260px;
+    width: 205px;
+    margin-right: 5px;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
 
+    /* border: 1px solid black; */
 }
 
 #operators {
-    height: 270px;
-    width: 140px;
-    margin-top: 5px;
+    height: 260px;
+    width: 135px;
     margin-left: 5px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black; */
 }
 
 #digit {
-    border: 1px solid black;
+    border: 1px solid rgb(44, 39, 39);
     height: 50px;
     width: 55px;
     margin: 5px;
@@ -72,7 +77,15 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+
+}
+
+#digits #digit {
     background-color: rgb(240, 180, 119);
+}
+
+#operators #digit {
+    background-color: rgb(129, 220, 251);
 }
 
 #digit:nth-child(10) {
@@ -92,6 +105,10 @@
     font-weight: bold;
 }
 
+#operators #digit span {
+    font-size: larger;
+}
+
 #digit:hover {
     filter: brightness(80%);
 }
@@ -99,4 +116,8 @@
 #screen span {
     font-weight: bold;
     font-size: 30px;
+}
+
+.pressedOper {
+    filter: brightness(80%);
 }
